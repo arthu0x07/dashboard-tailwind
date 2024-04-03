@@ -1,6 +1,6 @@
 export function Logo() {
   return (
-    <strong className="text-zinc flex items-center gap-2 text-xl font-semibold">
+    <strong className=" text-zinc mx-1 flex items-center gap-2 text-xl font-semibold">
       <svg
         width={38}
         height={38}
