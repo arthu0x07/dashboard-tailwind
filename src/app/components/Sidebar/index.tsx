@@ -15,7 +15,7 @@ import { NavItem } from './NavItem'
 import { UsedSpaceWidget } from './UsedSpaceWidget'
 import { Profile } from './Profile'
 
-import * as Input from '@components/Input'
+import * as Input from '@components/Form/Input'
 
 export function Sidebar() {
   return (
