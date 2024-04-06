@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import * as ScrollArea from '@radix-ui/react-scroll-area'
 
 import * as Tabs from '@radix-ui/react-tabs'
 import { TabItem } from './TabItem'
@@ -8,68 +9,70 @@ export function SettingsTabs() {
   const [currentTab, setCurrentTab] = useState('tabs1')
 
   return (
-    <Tabs.Root value="currentTab" onValueChange={setCurrentTab}>
-      <Tabs.List className="mt-6 flex w-full items-center gap-4 border-b border-x-zinc-200">
-        <TabItem
-          value={'tabs1'}
-          title={'My Details'}
-          isSelected={currentTab === 'tabs1'}
-        />
+    <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
+      <ScrollArea.Root className="w-full" type="scroll">
+        <ScrollArea.Viewport className="w-full overflow-x-scroll">
+          <Tabs.List className="mt-6 flex w-full items-center gap-4 border-b border-zinc-200">
+            <TabItem
+              value="tab1"
+              title="My details"
+              isSelected={currentTab === 'tab1'}
+            />
+            <TabItem
+              value="tab2"
+              title="Profile"
+              isSelected={currentTab === 'tab2'}
+            />
+            <TabItem
+              value="tab3"
+              title="Password"
+              isSelected={currentTab === 'tab3'}
+            />
+            <TabItem
+              value="tab4"
+              title="Team"
+              isSelected={currentTab === 'tab4'}
+            />
+            <TabItem
+              value="tab5"
+              title="Plan"
+              isSelected={currentTab === 'tab5'}
+            />
+            <TabItem
+              value="tab6"
+              title="Billing"
+              isSelected={currentTab === 'tab6'}
+            />
+            <TabItem
+              value="tab7"
+              title="Email"
+              isSelected={currentTab === 'tab7'}
+            />
+            <TabItem
+              value="tab8"
+              title="Notifications"
+              isSelected={currentTab === 'tab8'}
+            />
+            <TabItem
+              value="tab9"
+              title="Integrations"
+              isSelected={currentTab === 'tab9'}
+            />
+            <TabItem
+              value="tab10"
+              title="API"
+              isSelected={currentTab === 'tab10'}
+            />
+          </Tabs.List>
+        </ScrollArea.Viewport>
 
-        <TabItem
-          value={'tabs2'}
-          title={'Profile'}
-          isSelected={currentTab === 'tabs2'}
-        />
-
-        <TabItem
-          value={'tabs3'}
-          title={'Password'}
-          isSelected={currentTab === 'tabs3'}
-        />
-
-        <TabItem
-          value={'tabs4'}
-          title={'Team'}
-          isSelected={currentTab === 'tabs4'}
-        />
-
-        <TabItem
-          value={'tabs5'}
-          title={'Plan'}
-          isSelected={currentTab === 'tabs5'}
-        />
-
-        <TabItem
-          value={'tabs6'}
-          title={'Billing'}
-          isSelected={currentTab === 'tabs6'}
-        />
-
-        <TabItem
-          value={'tabs7'}
-          title={'Email'}
-          isSelected={currentTab === 'tabs7'}
-        />
-
-        <TabItem
-          value={'tabs8'}
-          title={'Notifications'}
-          isSelected={currentTab === 'tabs8'}
-        />
-
-        <TabItem
-          value={'tabs9'}
-          title={'Integrations'}
-          isSelected={currentTab === 'tabs9'}
-        />
-
-        <TabItem
-          value={'tabs10'}
-          title={'API'}
-          isSelected={currentTab === 'tabs10'}
-        />
-      </Tabs.List>
+        <ScrollArea.Scrollbar
+          className="flex h-0.5 translate-y-1.5 touch-none select-none flex-col bg-zinc-100"
+          orientation="horizontal"
+        >
+          <ScrollArea.Thumb className="relative flex-1 rounded-lg bg-zinc-300" />
+        </ScrollArea.Scrollbar>
+      </ScrollArea.Root>
     </Tabs.Root>
   )
 }
